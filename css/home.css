@@ -1,0 +1,458 @@
+
+/* General Reset and Body Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1f2d3d;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between logo and text */
+}
+
+.logo {
+    width: 30px; /* Set the width of the logo */
+    height: 30px; /* Set the height of the logo */
+    border-radius: 50%; /* Make it circular */
+}
+
+.header-title {
+   
+    color: #fff;
+    /*font-size: 1.2em; */
+}
+
+/* Sidebar Navigation */
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 220px;
+    height: 100vh;
+    padding: 20px 10px;
+    position: fixed;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar ul {
+    list-style-type: none;
+}
+
+.nav-bar li {
+    display: flex; /* Align children in a row */
+    align-items: center; /* Vertically center the items */
+    margin-bottom: 15px; /* Spacing between list items */
+}
+
+.nav-bar ul li i {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin-right: 10px; /* Add space to the right of the icon */
+    margin-left: 15px
+}
+
+.nav-bar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    background-color: #e4e9f2;
+    color: #1b1f3b;
+    font-weight: bold;
+}
+
+.nav-bar a i {
+    margin-right: 10px;
+}
+/* Content Area */
+.content {
+    margin-left: 240px; /* Adjust to allow space for the sidebar */
+    padding: 40px;
+    background-color: #f4f6f9; /* Subtle light gray background */
+}
+
+/* Page-Heading */
+.page-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Page Heading */
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1b1f3b;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Add Contact Butto */
+#NewContactBtn2 {
+    background-color: #5c67f2; /* Button background color */
+    color: white; /* Text color */
+    border: none;
+    padding-left: 16px; /* Adjust padding for button size */
+    padding-right:16px;
+    border-radius: 8px; /* Rounded edges */
+    cursor: pointer;
+    font-size: 14px; /* Font size */
+    display: flex; /* Align icon and text on the same line */
+    justify-content: space-between;
+    align-items: center; /* Center content vertically */
+    gap: 8px; /* Space between icon and text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    height: 45px;
+    width:140px;
+}
+
+#NewContactBtn2:hover {
+    background-color: #4a58d1; /* Slightly darker shade on hover */
+}
+
+#NewContactBtn2 i {
+    margin: 0; /* Remove any default spacing */
+}
+
+
+#goToUser{
+    background-color: #5c67f2; /* Button background color */
+    color: white; /* Text color */
+    border: none;
+    padding-left: 25px; /* Adjust padding for button size */
+    padding-right:25px;
+    border-radius: 8px; /* Rounded edges */
+    cursor: pointer;
+    font-size: 14px; /* Font size */
+    display: flex; /* Align icon and text on the same line */
+    justify-content: space-between;
+    align-items: center; /* Center content vertically */
+    gap: 8px; /* Space between icon and text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    height: 45px;
+    width:140px;
+}
+
+#goToUser:hover {
+    background-color: #4a58d1; /* Slightly darker shade on hover */
+}
+
+#goToUser i {
+    margin: 0; /* Remove any default spacing */
+}
+
+/* Filter Buttons */
+.table-filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.table-filter label i {
+    margin-right: 8px; /* Adjust the space as needed */
+    
+}
+
+.table-filter a {
+    text-decoration: none;
+    color: #1b1f3b;
+    background-color: #e0e5ed;
+    padding: 8px 14px;
+    border-radius: 20px; /* Rounded buttons */
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.table-filter a:hover, .table-filter a.active {
+    background-color: #1b1f3b; /* Dark blue background */
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Add Button */
+button.add-contact {
+    background-color: #5a67d8; /* Modern blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button.add-contact:hover {
+    background-color: #434da3; /* Slightly darker blue */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e6e9ef;
+    font-size: 0.95rem;
+}
+
+.table th, .table tr:first-child{
+    background-color: #f4f6fb;
+    color: #1b1f3b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9fafb; /* Subtle row color */
+}
+
+.table tr:hover {
+    background-color: #e8edf3;
+    transition: background-color 0.2s ease;
+}
+
+.table td {
+    color: #555;
+}
+
+.table a {
+    color: #5a67d8; /* Blue links */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.sales {
+    background-color: #f1c40f; /* Yellow badge */
+    color: #333;
+}
+
+.badge.support {
+    background-color: #5a67d8; /* Blue badge */
+}
+
+/* Visibility Classes */
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* Form container styling */
+#new-contact form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column grid layout */
+    gap: 20px 30px; /* Row gap: 20px, Column gap: 30px */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Full-width fields */
+.input-container.assigned-container {
+    grid-column: span 2; /* Make the "Assigned To" field take the full width */
+    width:200px;
+}
+
+/* Individual input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.input-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input and select fields */
+.input-container input,
+.input-container select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #5c67f2;
+}
+
+/* Save button styling */
+.save-button {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    grid-column: span 2; /* Make Save button take full width */
+}
+
+#addContact {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#addContact:hover {
+    background-color: #4a57d4;
+}
+
+
+#new_user form {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr; /* Two-column grid layout */
+    gap: 20px 30px; /* Row gap: 20px, Column gap: 30px */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Full-width fields */
+.input-container.role-container {
+    width: auto; /* Adjusts width based on content */
+    min-width: 80x; /* Prevents it from being too narrow */
+    max-width: 110px; /* Sets an upper bound */
+}
+
+/* Individual input container */
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+.input-container label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input and select fields */
+.input-container input,
+.input-container select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #5c67f2;
+}
+
+/* First Name and Last Name in the same row */
+#new_user .form-row {
+    display: flex;
+    gap: 20px; /* Space between the fields */
+}
+
+/* Email and Password in the same row */
+#new_user .form-row .input-container {
+    width: 48%; /* Ensures both inputs fit in one row */
+}
+
+/* Save button styling */
+.save-button {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    grid-column: span 2; /* Make Save button take full width */
+}
+
+#new_user #addUser {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+#new_user #addUser:hover {
+    background-color: #4a57d4;
+}
+
+
+
+
+
+

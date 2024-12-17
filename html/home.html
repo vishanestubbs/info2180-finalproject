@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/addUser.js" type="text/javascript"></script>
+    <script src="../js/users.js" type="text/javascript"></script>
+    <script src="../js/logout.js" type="text/javascript"></script>
+    <script src="../js/dashboard.js" type="text/javascript"></script>
+    <script src="../js/addContact.js" type="text/javascript"></script>
+    <script src="../js/home.js"></script>
+    <script src="https://kit.fontawesome.com/06137565b5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/home.css">
+
+    <title>Dolphin CRM</title>
+</head>
+
+
+<body>
+    
+        <header>
+            <div class="header-container">
+                <img src="../info2180-finalproject/image.jpg" alt="Dolphin CRM Logo" class="logo">
+                <p class="header-title">Dolphin CRM</p>
+            </div>
+        </header>
+   
+
+    <div class="nav-bar">
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="#" id="HomeBtn">Home</a></li>
+            <li><i class="fa-solid fa-circle-user"></i><a href="#" id="NewContactBtn">New Contact</a></li>
+            <li><i class="fa-solid fa-user-group"></i><a href="#" id="UsersBtn">Users</a></li>
+            <li><i class="fa-solid fa-arrow-right-to-bracket fa-flip-horizontal"></i><a href="#" id="LogoutBtn">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+
+        <script>
+            function viewContact(id){
+                var HomePage = document.getElementById('home'); 
+                HomePage.classList.add("hidden");
+
+
+                var result = document.getElementById('sel_contact');
+                result.classList.remove("hidden");
+                var xhttp = new XMLHttpRequest();  
+                var url = "http://localhost/info2180-finalproject/php/dolphin-crm.php?type=viewC&sel_id="+id;
+                xhttp.onreadystatechange = function() {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {  
+                        result.innerHTML = xhttp.responseText;  
+                    }
+                };
+                xhttp.open('GET', url); 
+                xhttp.send();
+            }
+
+        </script>
+
+        <div id="home" class="page">
+            <div class="table-header">
+                <div class="page-heading">
+                    <h2>Dashboard</h2>
+                    <button id="NewContactBtn2"><i class="fa-solid fa-plus"></i>Add Contact</button> 
+                </div>
+
+                <div class="table-container">
+                    <div class="table-filter">
+    
+                        <label for="filter"><b><i class="fa-solid fa-filter fa-flip-horizontal"></i>Filter By:</b></label>
+                        <a href="#" id="allC">All</a>
+                        <a href="#" id="leadsC">Sales Leads</a>
+                        <a href="#" id="supportC">Support</a>
+                        <a href="#" id="assignC">Assigned to me</a>
+    
+                    </div>
+                </div>
+
+                <div id="showDash">
+
+                </div>
+                
+                <br>
+
+                <br><hr>               
+                
+            </div>
+
+        </div>
+
+        <div id="new-contact" class="page">
+
+            <h1>New Contact</h1>
+
+            <div id="newContactError">
+
+            </div>
+
+            <div>
+                <form action="submit" method="post">
+
+                    <div class="input-container title-container">
+                        <label for="title">Title</label>
+                        <select name="title" id="c-title">
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="first-name" id="c-first-name">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="last-name" id="c-last-name">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="c-email">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="telephone">Telephone</label>
+                        <input type="text" name="telephone" id="c-telephone">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="c-company">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="c-type">Type</label>
+                        <select name="c-type" id="c-type">
+                            <option value="Sales Lead">Sales Lead</option>
+                            <option value="Support">Support</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-container assigned-container">
+                        <label for="assigned-to">Assigned To</label>
+                        <select name="assigned-to" id="c-assign">
+                            <!-- Options here -->
+                        </select>
+                    </div>
+                    
+                    <div class="save-button">
+                        <button id="addContact">Save</button>
+                    </div>
+                    
+
+
+
+                </form>
+            
+            </div>
+            
+        </div>
+
+
+        <div id="users" class="page">
+
+            <div class="table-header">
+                <div class="page-heading">
+                    <h2>Users</h2>
+                    <button id="goToUser"><i class="fa-solid fa-plus"></i>Add User</button>
+                </div>
+                <div id="showUser">
+
+                </div>
+                <br>
+                <br>
+                <hr>
+                
+
+            </div>
+
+        </div>
+
+
+        <div class="new-user, page" id="new_user">
+
+            <div id="newUserError"></div>
+    <h1>New User</h1>
+
+    <form action="submit" method="post">
+        <!-- First Name and Last Name on the same line -->
+        <div class="form-row">
+            <div class="input-container">
+                <label for="first-name">First Name</label>
+                <input type="text" name="first-name" id="u-first-name">
+            </div>
+            <div class="input-container">
+                <label for="last-name">Last Name</label>
+                <input type="text" name="last-name" id="u-last-name">
+            </div>
+        </div>
+
+        <!-- Email and Password on another line -->
+        <div class="form-row">
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="u-email">
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="text" name="password" id="u-pass">
+            </div>
+        </div>
+
+        <!-- Role by itself -->
+        <div class="input-container role-container">
+            <label for="role">Role</label>
+            <select name="role" id="u-role">
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+        <!-- Save button -->
+        <div class="save-button">
+            <button id="addUser">Save</button>
+        </div>
+    </form>
+
+             
+            <div class="view-contact" id="view-contact" >
+
+                <script>
+                    function swap(id){
+                        var res = document.getElementById('swap_res');
+                        var xhttp = new XMLHttpRequest();  
+                        var url = "http://localhost/info2180-finalproject/php/dolphin-crm.php?type=swap&sel_id="+id;
+                        xhttp.onreadystatechange = function() {
+                            if (xhttp.readyState == 4 && xhttp.status == 200) {  
+                                res.innerHTML = xhttp.responseText;  
+                                res.classList.add('confirm');
+                            }
+                        };
+                        xhttp.open('GET', url); 
+                        xhttp.send();
+                    }
+        
+                </script>
+
+
+                <div id="view_header">
+                    <img src="" alt="">
+                    <div id="title">
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="user-details">
+
+            <div id="sel_contact" class="page">
+
+
+            </div>
+            
+        </div>
+
+
+    </div>
+
+</body>
+</html>
