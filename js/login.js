@@ -1,8 +1,8 @@
 
 window.onload = function() {
-    var login = document.getElementById('submit');
+    var login = document.getElementById('login');
     var email = document.getElementById('email');
-    var password = document.getElementById('authenticate');
+    var password = document.getElementById('password');
     var result = document.getElementById('result');
 
 

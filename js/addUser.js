@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var toUser = document.getElementById('goToUser');
     var user = document.getElementById('new_user');
     var userError = document.getElementById('newUserError');
-    var get_users= document.getElementById('users');
+    var pages = document.getElementsByClassName('page');
 
     var fname;
     var lname;
@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var role;
 
     toUser.addEventListener("click", function(){
-        get_users.classList.add("hidden");
+        Array.from(pages).forEach(function(page){
+            page.classList.add("hidden");
+        });
         user.classList.remove("hidden");
         console.log("test");
     });

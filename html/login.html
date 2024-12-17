@@ -15,7 +15,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <img src="../info2180-finalproject/dolphin.png" alt="Dolphin CRM Logo" class="logo">
+            <img src="../img/dolphin.png" alt="Dolphin CRM Logo" class="logo">
             <p class="header-title">Dolphin CRM</p>
         </div>
     </header>
@@ -23,16 +23,16 @@
     <!-- Login Section -->
     <main>
         <div class="login-container">
-            <form action="http://localhost:8888/Project/dolphin-crm.php" method="post" class="login-form" id="login-form">
+            <div class="login-form" id="login-form">
                 <h1 class="login-title">Login</h1>
                 <div class="input-group">
                     <input type="email" id="email" name="email" placeholder="Email address" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" id="authenticate" name="authenticate" placeholder="Password" required>
+                    <input type="password" id="password" name="authenticate" placeholder="Password" required>
                 </div>
                 <div class="input-group">
-                    <button type="submit" id="submit" class="login-button">
+                    <button id="login" class="login-button">
                         <i class="fa-solid fa-lock" id="lock"></i>Login</button>
                 </div>
             </form>

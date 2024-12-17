@@ -1,4 +1,4 @@
-    -- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
@@ -41,8 +41,8 @@ CREATE TABLE `Contacts` (
   `type` varchar(255) DEFAULT NULL,
   `assigned_to` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `created_at` DEFAULT current_timestamp(),
-  `updated_at` DEFAULT current_timestamp()
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE `Notes` (
   `contact_id` int(11) DEFAULT NULL,
   `comment` text DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `created_at` DEFAULT current_timestamp()
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -130,5 +130,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-    
